@@ -21,7 +21,7 @@ public class HubUnitParser {
 				totalNumberOfCoursesWithHeader++;
 				list.add(sc.next());
 			}
-			totalNumberOfCoursesWithHeader /o= 24;
+			totalNumberOfCoursesWithHeader /= 24;
 			sc.close();
 		}catch(Exception e) {
 			System.out.println("Missing File: \"buhub.csv\"");
