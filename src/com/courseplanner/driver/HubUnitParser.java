@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class HubUnitParser {
-	private final int totalNumberOfCoursesWithHeader = 25;
+	private int totalNumberOfCoursesWithHeader = 0;
 	private String[] categories = {"Philosophical","Aesthetic","Historical","Scientific1","Scientific2","Social1","Social2","Quantitative1","Quantitative2",
 			"Individual","Global","Ethical","FYW","WRI","WIC","Oral","Digital","Critical","Research","Teamwork","Creativity"};
 	private int[] requirements = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 2, 2, 2, 2};
@@ -18,8 +18,10 @@ public class HubUnitParser {
 		try(Scanner sc = new Scanner(new File("buhub.csv"))){
 			sc.useDelimiter("[,\n]");
 			while(sc.hasNext()) {
+				totalNumberOfCoursesWithHeader++;
 				list.add(sc.next());
 			}
+			totalNumberOfCoursesWithHeader /o= 24;
 			sc.close();
 		}catch(Exception e) {
 			System.out.println("Missing File: \"buhub.csv\"");
